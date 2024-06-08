@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Text, View, Button, Pressable, Image, Modal, StatusBar, ActivityIndicator, Alert } from "react-native";
+import { Text, View, Button, Pressable, Image, Modal, StatusBar, ActivityIndicator, Alert, StyleSheet } from "react-native";
 const iconImg = require("/Users/ejaimes/my-app/assets/images/icon.png");
 
 
@@ -86,6 +86,10 @@ export default function Index() {
               Custom Alert Button</Text>
           </Pressable>
 
+          <View style={styles.modalView}> 
+            <Text> StyleSheet API</Text>
+          </View>
+
 
         </View>
       </Modal>
@@ -95,3 +99,12 @@ export default function Index() {
   
   );
 }
+
+const styles = StyleSheet.create({
+  modalView: {
+    backgroundColor: 'lightblue',
+    padding: 60, 
+    justifyContent: 'center',
+    borderRadius: 15,
+  }
+})
