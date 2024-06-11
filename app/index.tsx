@@ -1,100 +1,49 @@
-import { useState } from "react";
-import { Text, View, Button, Pressable, Image, Modal, StatusBar, ActivityIndicator, Alert, StyleSheet } from "react-native";
+import React, { useState } from "react";
+import { NavigationContainer } from '@react-navigation/native';
+import { Text, View, Button, Pressable, Image, Modal, StatusBar, ActivityIndicator, Alert, StyleSheet, LogBox, ScrollView } from "react-native";
 const iconImg = require("/Users/ejaimes/my-app/assets/images/icon.png");
 
 
+
+
 export default function Index() {
+
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-
-      <StatusBar backgroundColor={'blue'} barStyle={'default'} hidden/>
-      <ActivityIndicator animating={isLoading} size={'large'} color={'blue'}/>
-
-      <Text>Hello world </Text>
-      <Text></Text>
-
-      <Button 
-      title="Press" 
-      onPress={() => setIsLoading(!isLoading)}
-      color="pink"
-      >
-      </Button>
+    <ScrollView contentContainerStyle={styles.contentContainer} style={styles.scrollview}>
     
-      <Pressable onPress={() => console.log("Image pressed")}>
-        <Image source={iconImg} style={{width: 150, height: 150, backgroundColor: 'black',}} />
-      </Pressable>
-
-      <Pressable onPress={() => setIsModalVisible(true) } style={{
-        backgroundColor: 'green',
-        padding: 10,
-        borderRadius: 15,
-        margin: 10
-      }}>
-        <Text>Custom Button</Text>
-      </Pressable>
-
-      <Modal
-      visible={isModalVisible}
-      onRequestClose={() => setIsModalVisible(false)}
-      animationType="slide"
-      presentationStyle="pageSheet">
-        
-        <View style={{flex:1, backgroundColor: "pink", padding: 60}}>
-          <Text>More Scratch Paper</Text>
-          <Button 
+      <View style={[{backgroundColor: 'pink'}, styles.box]}>
+        <Text>Box 1</Text>
+      </View>
+      <View style={[{backgroundColor: 'lightyellow'}, styles.box]}>
+        <Text>Box 2</Text>
+      </View>
+      <View style={[{backgroundColor: 'lightgreen'}, styles.box]}>
+        <Text>Box 3</Text>
+      </View>
+      <View style={[{backgroundColor: 'lightblue'}, styles.box]}>
+        <Text>Box 4</Text>
+      </View>
+      <View style={[{backgroundColor: 'plum'}, styles.box]}>
+        <Pressable onPress={() => setIsModalVisible(true)}>
+          <Text>Mystery Box</Text>
+        </Pressable>
+        <Modal
+        visible={isModalVisible}
+        onRequestClose={() => setIsModalVisible(false)}
+        animationType="slide"
+        presentationStyle="pageSheet">
+          <View style={styles.modalView}>
+            <Button
             title="close"
-            color={'midnightBlue'}
-            onPress={() => setIsModalVisible(false)}>
-          </Button>
-          <Button
-            title="Alert"
-            color={'green'}
-            onPress={() => Alert.alert("you have been alerted!")}>
-          </Button>
-          <Pressable 
-          onPress={() => Alert.alert("Ring the Alarm", "Break in case of emergency",
-            [
-              {
-                text: "Understood",
-
-              },
-              {
-                text: "Break anyway",
-              },
-            ])
-          }
-          style={{
-            backgroundColor:'blue',
-            padding: 10, 
-            margin: 10,
-            borderRadius: 15,
-          }}>
-            <Text 
-            style={
-              {
-                color: 'white',
-                textAlign: "center"
-                }}>
-              Custom Alert Button</Text>
-          </Pressable>
-
-          <View style={styles.modalView}> 
-            <Text> StyleSheet API</Text>
+            onPress={() => setIsModalVisible(false)}
+            color={'midnightblue'}></Button>
           </View>
+        </Modal>
+      </View>
 
-
-        </View>
-      </Modal>
-
-    </View>
+    </ScrollView>
 
   
   );
@@ -106,5 +55,23 @@ const styles = StyleSheet.create({
     padding: 60, 
     justifyContent: 'center',
     borderRadius: 15,
+    flex: 1
+  },
+  box: {
+    padding: 60,
+    justifyContent: 'center',
+    borderRadius: 15,
+    width: 300,
+    alignItems: 'center',
+    margin: 10,
+  },
+  scrollview : {
+    flex: 1,
+    marginHorizontal: 20,
+    backgroundColor: 'gray',
+  },
+  contentContainer: {
+    paddingTop: 64, 
+    alignItems: 'center'
   }
 })
