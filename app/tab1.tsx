@@ -7,7 +7,7 @@ const iconImg = require("/Users/ejaimes/my-app/assets/images/icon.png");
 
 
 
-export default function Index() {
+export default function Tab1() {
 
   const [isModalVisible, setIsModalVisible] = useState(false);
 
@@ -19,16 +19,16 @@ export default function Index() {
         <View style={[{backgroundColor: 'pink'}, styles.box]}>
           <Text>Box 1</Text>
         </View>
-        <View style={[{backgroundColor: 'lightyellow'}, styles.box]}>
+        <View style={[{backgroundColor: 'pink'}, styles.box]}>
           <Text>Box 2</Text>
         </View>
-        <View style={[{backgroundColor: 'lightgreen'}, styles.box]}>
+        <View style={[{backgroundColor: 'pink'}, styles.box]}>
           <Text>Box 3</Text>
         </View>
-        <View style={[{backgroundColor: 'lightblue'}, styles.box]}>
+        <View style={[{backgroundColor: 'pink'}, styles.box]}>
           <Text>Box 4</Text>
         </View>
-        <View style={[{backgroundColor: 'plum'}, styles.box]}>
+        <View style={[{backgroundColor: 'pink'}, styles.box]}>
           <Pressable onPress={() => setIsModalVisible(true)}>
             <Text>Mystery Box</Text>
           </Pressable>
