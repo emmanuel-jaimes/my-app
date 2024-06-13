@@ -6,8 +6,8 @@ import React from 'react';
 import { TabBarIcon } from "@/components/navigation/TabBarIcon";
 import {Colors} from '@/constants/Colors';
 import {useColorScheme} from '@/hooks/useColorScheme';
+import { StyleSheet } from "react-native";
 
-const Tab = createBottomTabNavigator();
 
 
 export default function RootLayout() {
@@ -24,7 +24,8 @@ export default function RootLayout() {
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
-      }}>
+      }}
+      sceneContainerStyle={styles.sceneContainer}>
         <Tabs.Screen
           name="index"
           options={{
@@ -37,7 +38,7 @@ export default function RootLayout() {
         <Tabs.Screen  
           name="tab1"
           options={{
-            title: 'tab1',
+            title: 'page1',
             tabBarIcon: ({color, focused }) => (
               <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
               ),
@@ -46,3 +47,12 @@ export default function RootLayout() {
       </Tabs>
   );
 }
+
+const styles = StyleSheet.create({
+  sceneContainer: {
+    backgroundColor: 'black',
+    borderBlockColor: 'black'
+
+  }
+})
+

@@ -19,16 +19,16 @@ export default function Tab1() {
         <View style={[{backgroundColor: 'pink'}, styles.box]}>
           <Text>Box 1</Text>
         </View>
-        <View style={[{backgroundColor: 'pink'}, styles.box]}>
+        <View style={[{backgroundColor: 'lightyellow'}, styles.box]}>
           <Text>Box 2</Text>
         </View>
-        <View style={[{backgroundColor: 'pink'}, styles.box]}>
+        <View style={[{backgroundColor: 'lightgreen'}, styles.box]}>
           <Text>Box 3</Text>
         </View>
-        <View style={[{backgroundColor: 'pink'}, styles.box]}>
+        <View style={[{backgroundColor: 'lightblue'}, styles.box]}>
           <Text>Box 4</Text>
         </View>
-        <View style={[{backgroundColor: 'pink'}, styles.box]}>
+        <View style={[{backgroundColor: 'plum'}, styles.box]}>
           <Pressable onPress={() => setIsModalVisible(true)}>
             <Text>Mystery Box</Text>
           </Pressable>
