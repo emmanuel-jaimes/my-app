@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     },
     box: {
         padding: 20,
-        backgroundColor: 'white',
+        backgroundColor: 'pink',
         width: 150,
         height: 150,
         alignItems: 'center',
@@ -36,12 +36,11 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 16,
         fontWeight: 'bold',
-        marginBottom: 10,
     },
     cover: {
-        width: 100,
-        height: 100,
-        marginBottom: 10,
+        width: 150,
+        height: 150,
+        borderRadius: 10,
     },
 });
 

@@ -19,14 +19,17 @@ export default function Carousel () {
             {/* style={tailwind.style("overflow-visible")} */}
                 <Animated.ScrollView 
                 horizontal={true} 
-                contentContainerStyle={styles.container}>
-                    <Box title='card'></Box>
-                    <Box title='card'></Box>
-                    <Box title='card'></Box>
-                    <Box title='card'></Box>
-                    <Box title='card'></Box>
-                    <Box title='card'></Box>
-                    <Box title='card'></Box>
+                showsHorizontalScrollIndicator={false}
+                snapToInterval={Dimensions.get('window').width}
+                decelerationRate="fast"
+                contentContainerStyle={[styles.container, tailwind.style("flex-grow-0")]}>
+                    <Box title=''></Box>
+                    <Box title=''></Box>
+                    <Box title=''></Box>
+                    <Box title=''></Box>
+                    <Box title=''></Box>
+                    <Box title=''></Box>
+                    <Box title=''></Box>
                 </Animated.ScrollView>
             </Animated.View>
 
@@ -43,6 +46,10 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         direction: 'ltr',
         overflow: 'scroll',
-        
+        justifyContent: 'center',
+        alignContent: 'center',
+        alignItems: 'center',
+        paddingLeft: 100,
+        paddingRight: 50,
     }
 })
