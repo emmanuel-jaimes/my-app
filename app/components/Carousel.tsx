@@ -8,11 +8,8 @@ import tailwind from 'twrnc';
 import Animated from 'react-native-reanimated';
 
 
-
-
 export default function Carousel () {
 
-    
     return (
         <SafeAreaView style={tailwind.style("flex-1 justify-center bg-white")}>
             <Animated.View >
@@ -41,8 +38,7 @@ export default function Carousel () {
 
 const styles = StyleSheet.create({
     container: {
-        // backgroundColor: 'pink',
-        // height: 200,
+        backgroundColor: 'lightblue',
         flexDirection: 'row',
         direction: 'ltr',
         overflow: 'scroll',
@@ -50,6 +46,6 @@ const styles = StyleSheet.create({
         alignContent: 'center',
         alignItems: 'center',
         paddingLeft: 100,
-        paddingRight: 50,
+        paddingRight: 100,
     }
 })
